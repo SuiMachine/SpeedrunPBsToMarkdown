@@ -16,7 +16,7 @@ namespace SpeedrunToMarkdown
     public partial class Form1 : Form
     {
         string file = "username.txt";
-        Leaderboards _leaderboards;
+        Progress_Form _leaderboards;
 
 
         /*------------------
@@ -25,7 +25,6 @@ namespace SpeedrunToMarkdown
         public Form1()
         {
             InitializeComponent();
-            _leaderboards = new Leaderboards();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,7 +54,12 @@ namespace SpeedrunToMarkdown
 
         private void b_GetPB_Click(object sender, EventArgs e)
         {
-            RB_Result.Text = _leaderboards.displayPBs(TB_Nickname.Text);
+            _leaderboards = new Progress_Form(this);
+            _leaderboards.Show();
+            Thread lbThread = new Thread(new ThreadStart(_leaderboards.displayPBs));    //it's ugly, but it works
+            _leaderboards.username = TB_Nickname.Text;
+            lbThread.Start();
+            RB_Result.Text = _leaderboards.output;
         }
     }
 }

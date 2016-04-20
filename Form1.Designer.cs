@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.RB_Result = new System.Windows.Forms.RichTextBox();
-            this.b_GetPB = new System.Windows.Forms.Button();
-            this.b_Save = new System.Windows.Forms.Button();
-            this.TB_Nickname = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TB_Nickname = new System.Windows.Forms.TextBox();
+            this.b_Save = new System.Windows.Forms.Button();
+            this.b_GetPB = new System.Windows.Forms.Button();
+            this.RB_Result = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,43 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 421);
             this.panel1.TabIndex = 42;
-            // 
-            // RB_Result
-            // 
-            this.RB_Result.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RB_Result.Location = new System.Drawing.Point(3, 44);
-            this.RB_Result.Name = "RB_Result";
-            this.RB_Result.Size = new System.Drawing.Size(509, 335);
-            this.RB_Result.TabIndex = 4;
-            this.RB_Result.Text = "";
-            // 
-            // b_GetPB
-            // 
-            this.b_GetPB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.b_GetPB.Location = new System.Drawing.Point(224, 385);
-            this.b_GetPB.Name = "b_GetPB";
-            this.b_GetPB.Size = new System.Drawing.Size(66, 23);
-            this.b_GetPB.TabIndex = 3;
-            this.b_GetPB.Text = "Get PBs";
-            this.b_GetPB.UseVisualStyleBackColor = true;
-            this.b_GetPB.Click += new System.EventHandler(this.b_GetPB_Click);
-            // 
-            // b_Save
-            // 
-            this.b_Save.Location = new System.Drawing.Point(437, 5);
-            this.b_Save.Name = "b_Save";
-            this.b_Save.Size = new System.Drawing.Size(66, 23);
-            this.b_Save.TabIndex = 2;
-            this.b_Save.Text = "Save";
-            this.b_Save.UseVisualStyleBackColor = true;
-            this.b_Save.Click += new System.EventHandler(this.b_Save_Click);
-            // 
-            // TB_Nickname
-            // 
-            this.TB_Nickname.Location = new System.Drawing.Point(3, 7);
-            this.TB_Nickname.Name = "TB_Nickname";
-            this.TB_Nickname.Size = new System.Drawing.Size(428, 20);
-            this.TB_Nickname.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -115,6 +78,43 @@
             this.panel2.Size = new System.Drawing.Size(509, 35);
             this.panel2.TabIndex = 0;
             // 
+            // TB_Nickname
+            // 
+            this.TB_Nickname.Location = new System.Drawing.Point(3, 7);
+            this.TB_Nickname.Name = "TB_Nickname";
+            this.TB_Nickname.Size = new System.Drawing.Size(428, 20);
+            this.TB_Nickname.TabIndex = 0;
+            // 
+            // b_Save
+            // 
+            this.b_Save.Location = new System.Drawing.Point(437, 5);
+            this.b_Save.Name = "b_Save";
+            this.b_Save.Size = new System.Drawing.Size(66, 23);
+            this.b_Save.TabIndex = 2;
+            this.b_Save.Text = "Save";
+            this.b_Save.UseVisualStyleBackColor = true;
+            this.b_Save.Click += new System.EventHandler(this.b_Save_Click);
+            // 
+            // b_GetPB
+            // 
+            this.b_GetPB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.b_GetPB.Location = new System.Drawing.Point(224, 385);
+            this.b_GetPB.Name = "b_GetPB";
+            this.b_GetPB.Size = new System.Drawing.Size(66, 23);
+            this.b_GetPB.TabIndex = 3;
+            this.b_GetPB.Text = "Get PBs";
+            this.b_GetPB.UseVisualStyleBackColor = true;
+            this.b_GetPB.Click += new System.EventHandler(this.b_GetPB_Click);
+            // 
+            // RB_Result
+            // 
+            this.RB_Result.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RB_Result.Location = new System.Drawing.Point(3, 44);
+            this.RB_Result.Name = "RB_Result";
+            this.RB_Result.Size = new System.Drawing.Size(509, 335);
+            this.RB_Result.TabIndex = 4;
+            this.RB_Result.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,9 +139,9 @@
         private System.Windows.Forms.TextBox TB_Nickname;
         private System.Windows.Forms.Button b_Save;
         private System.Windows.Forms.Button b_GetPB;
-        private System.Windows.Forms.RichTextBox RB_Result;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
+        internal System.Windows.Forms.RichTextBox RB_Result;
     }
 }
 
