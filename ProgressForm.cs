@@ -18,6 +18,7 @@ namespace SpeedrunToMarkdown
     {
         public string output = "";
         public string username = "";
+        public bool tagWR = true;
         Form1 _parent;
 
         public Progress_Form(Form1 parent)
@@ -47,7 +48,7 @@ namespace SpeedrunToMarkdown
                         lb_Progress.Text = String.Format("Filtering out obsolete runs: {0} / {1}", currentProgress, progressHelper/2);
                         currentProgress++;
                         progressBar1.Value = currentProgress;
-                        if (!filteredPBs.Any(comp => comp.GameID == element.GameID && comp.CategoryID == element.CategoryID))//.Contains(comp => comp.Game == element.Game))
+                        if (!filteredPBs.Any(comp => comp.GameID == element.GameID && comp.CategoryID == element.CategoryID && element.Times.Primary < comp.Times.Primary && comp.VariableValues != element.VariableValues))//.Contains(comp => comp.Game == element.Game))
                         {
                             if (element.Level == null)
                                 filteredPBs.Add(element);
@@ -62,7 +63,16 @@ namespace SpeedrunToMarkdown
                         lb_Progress.Text = String.Format("Getting times and prepering final text: {0} / {1}", currentProgress, progressHelper);
                         currentProgress++;
                         progressBar1.Value = currentProgress;
-                        output += "+ **" + element.Game.Name + "** (" + element.Category.Name + ") - [";
+                        output += "+ **" + element.Game.Name + "** (" + element.Category.Name;
+                        if(element.VariableValues != null)
+                        {
+                            foreach(var variable in element.VariableValues)
+                            {
+                                output += ", " + variable.Value;
+                            }
+                        }
+
+                        output += ") - [";
                         if (element.Times.Primary > TimeSpan.FromHours(1))
                         {
                             output += element.Times.Primary.Value.Hours + ":";
@@ -82,7 +92,10 @@ namespace SpeedrunToMarkdown
                                 output += "0";
                             output += element.Times.Primary.Value.Seconds;
                         }
-                        output += "](" + element.WebLink.AbsoluteUri + ")\n";
+                        output += "](" + element.WebLink.AbsoluteUri + ")";
+                        if (element.Rank == 1 && tagWR)
+                            output += "^WR";
+                        output += "\n";
                     }
                     _parent.RB_Result.Text = output;
                     this.Close();

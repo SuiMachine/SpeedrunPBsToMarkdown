@@ -36,6 +36,7 @@
             this.b_Save = new System.Windows.Forms.Button();
             this.b_GetPB = new System.Windows.Forms.Button();
             this.RB_Result = new System.Windows.Forms.RichTextBox();
+            this.CB_TagWR = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -48,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(517, 421);
+            this.panel1.Size = new System.Drawing.Size(521, 421);
             this.panel1.TabIndex = 42;
             // 
             // tableLayoutPanel1
@@ -65,24 +66,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 412);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 412);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.CB_TagWR);
             this.panel2.Controls.Add(this.TB_Nickname);
             this.panel2.Controls.Add(this.b_Save);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 35);
+            this.panel2.Size = new System.Drawing.Size(513, 35);
             this.panel2.TabIndex = 0;
             // 
             // TB_Nickname
             // 
             this.TB_Nickname.Location = new System.Drawing.Point(3, 7);
             this.TB_Nickname.Name = "TB_Nickname";
-            this.TB_Nickname.Size = new System.Drawing.Size(428, 20);
+            this.TB_Nickname.Size = new System.Drawing.Size(351, 20);
             this.TB_Nickname.TabIndex = 0;
             // 
             // b_Save
@@ -98,7 +100,7 @@
             // b_GetPB
             // 
             this.b_GetPB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.b_GetPB.Location = new System.Drawing.Point(224, 385);
+            this.b_GetPB.Location = new System.Drawing.Point(226, 385);
             this.b_GetPB.Name = "b_GetPB";
             this.b_GetPB.Size = new System.Drawing.Size(66, 23);
             this.b_GetPB.TabIndex = 3;
@@ -111,15 +113,28 @@
             this.RB_Result.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RB_Result.Location = new System.Drawing.Point(3, 44);
             this.RB_Result.Name = "RB_Result";
-            this.RB_Result.Size = new System.Drawing.Size(509, 335);
+            this.RB_Result.Size = new System.Drawing.Size(513, 335);
             this.RB_Result.TabIndex = 4;
             this.RB_Result.Text = "";
+            // 
+            // CB_TagWR
+            // 
+            this.CB_TagWR.AutoSize = true;
+            this.CB_TagWR.Checked = true;
+            this.CB_TagWR.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CB_TagWR.Location = new System.Drawing.Point(360, 9);
+            this.CB_TagWR.Name = "CB_TagWR";
+            this.CB_TagWR.Size = new System.Drawing.Size(72, 17);
+            this.CB_TagWR.TabIndex = 3;
+            this.CB_TagWR.Text = "Tag WRs";
+            this.CB_TagWR.UseVisualStyleBackColor = true;
+            this.CB_TagWR.CheckedChanged += new System.EventHandler(this.CB_TagWR_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 421);
+            this.ClientSize = new System.Drawing.Size(521, 421);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -142,6 +157,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.RichTextBox RB_Result;
+        private System.Windows.Forms.CheckBox CB_TagWR;
     }
 }
 
